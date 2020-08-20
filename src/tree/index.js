@@ -5,7 +5,7 @@ import { JsonTree } from "./tree";
 
 export const Tree = observer(() => {
   const { jsonp } = useContext(StoreContext);
-  const { data, matchSet } = jsonp;
+  const { data } = jsonp;
 
-  return <JsonTree data={data} matchSet={matchSet} />;
+  return <JsonTree data={data} />;
 });
