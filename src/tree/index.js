@@ -1,10 +1,11 @@
 import React, { useContext } from "react";
 import { observer } from "mobx-react";
-import { toJS } from "mobx";
 import { StoreContext } from "../index";
+import { JsonTree } from "./tree";
 
 export const Tree = observer(() => {
-  const { file } = useContext(StoreContext);
-  console.log(toJS(file));
-  return <span>File data here</span>;
+  const { jsonp } = useContext(StoreContext);
+  const { data, matchSet } = jsonp;
+
+  return <JsonTree data={data} matchSet={matchSet} />;
 });

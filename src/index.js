@@ -4,6 +4,7 @@ import ReactDOM from "react-dom";
 import GlobalStyle from "./global-styles";
 import { Header } from "./header";
 import { FileImport } from "./file-import";
+import { QueryInput } from "./query-input";
 import { Tree } from "./tree";
 import store from "./store";
 
@@ -14,6 +15,7 @@ ReactDOM.render(
     <GlobalStyle />
     <Header />
     <FileImport />
+    <QueryInput />
     <Tree />
   </StoreContext.Provider>,
   document.getElementById("root")
