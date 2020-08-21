@@ -4,7 +4,7 @@ export const theme = {
     secundary: "#501B1D",
     tertiary: "#64485C",
     quaternary: "#83677B",
-    quinary: "#ADADAD",
+    quinary: "#efefef",
     senary: "#75715e",
   },
 };
