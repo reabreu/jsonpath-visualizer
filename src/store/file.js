@@ -14,7 +14,6 @@ class JSONP {
   }
 
   get matchSet() {
-    console.log("match set computed");
     const matchSet = new Set();
 
     if (this.query !== "") {

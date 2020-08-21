@@ -18,7 +18,6 @@ export const JsonTree = ({ data }) => (
     keyPath={["$"]}
     invertTheme={false}
     shouldExpandNode={(keyName, data, level) => {
-      console.log("level", level);
       return level < 1;
     }}
     labelRenderer={(keyPath) => <TreeLabelNode keyPath={keyPath} />}
