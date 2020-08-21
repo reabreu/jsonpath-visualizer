@@ -5,6 +5,7 @@ import GlobalStyle from "./global-styles";
 import { Header } from "./header";
 import { FileImport } from "./file-import";
 import { QueryInput } from "./query-input";
+import { InputsPanel } from "./inputs-panel";
 import { Tree } from "./tree";
 import store from "./store";
 
@@ -14,8 +15,10 @@ ReactDOM.render(
   <StoreContext.Provider value={store}>
     <GlobalStyle />
     <Header />
-    <FileImport />
-    <QueryInput />
+    <InputsPanel>
+      <FileImport />
+      <QueryInput />
+    </InputsPanel>
     <Tree />
   </StoreContext.Provider>,
   document.getElementById("root")

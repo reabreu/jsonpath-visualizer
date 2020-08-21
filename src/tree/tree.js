@@ -2,12 +2,8 @@ import React, { useContext } from "react";
 import JSONTree from "react-json-tree";
 import { observer } from "mobx-react";
 import jp from "jsonpath";
-import styled from "styled-components";
 import { StoreContext } from "../index";
-
-const NodeTree = styled.label`
-  color: ${({ isSelected }) => (isSelected ? "red" : null)};
-`;
+import { TreeTheme, NodeTree } from "./styles";
 
 const TreeLabelNode = observer(({ keyPath }) => {
   const { jsonp } = useContext(StoreContext);
@@ -20,10 +16,12 @@ export const JsonTree = ({ data }) => (
   <JSONTree
     data={data}
     keyPath={["$"]}
-    shouldExpandNode={() => true}
-    labelRenderer={(keyPath) => {
-      console.log("labelRenderer renderer");
-      return <TreeLabelNode keyPath={keyPath} />;
+    invertTheme={false}
+    shouldExpandNode={(keyName, data, level) => {
+      console.log("level", level);
+      return level < 1;
     }}
+    labelRenderer={(keyPath) => <TreeLabelNode keyPath={keyPath} />}
+    theme={TreeTheme}
   />
 );

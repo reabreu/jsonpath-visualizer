@@ -1,10 +1,14 @@
 import React from "react";
+import { UploadIcon } from "./upload-icon";
+import { Label, Input, Wrapper, Error } from "./styles";
 
 export const File = ({ onChange, hasError }) => {
   return (
-    <div>
-      <label htmlFor="file">Choose a JSON file:</label>
-      <input
+    <Wrapper>
+      <Label htmlFor="file">
+        <UploadIcon />
+      </Label>
+      <Input
         onChange={onChange}
         type="file"
         id="file"
@@ -12,7 +16,9 @@ export const File = ({ onChange, hasError }) => {
         accept=".json"
         role="button"
       />
-      {hasError && <p>Oops, looks like there was an error, please retry.</p>}
-    </div>
+      {hasError && (
+        <Error>Oops, looks like there was an error, please retry.</Error>
+      )}
+    </Wrapper>
   );
 };
